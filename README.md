@@ -6,6 +6,6 @@
 - Run `yarn install` to install all dependencies.
 - Check the [package.json] and use `yarn add` to install all the dependencies.
 
-- Run `yarn start`to start the server. And `npm start` for React.
+- Run `yarn start`to start the server and client React.
 - Go to localhost: http://locahost:3000/
  
