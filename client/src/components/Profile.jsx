@@ -8,21 +8,24 @@ import {
   } from "react-router-dom";
 
 function Profile () {
-    let location = useLocation();
-    let navigate = useNavigate();
-    const user = location.state.user;
+    // let location = useLocation();
+    // let navigate = useNavigate();
+    // const user = location.state.user;
 
     return (
+        // <div>
+        //     <div>
+        //         <label>First Name: </label> {user.fname}
+        //     </div>
+        //     <div>
+        //         <label>Last Name: </label>{user.lname}
+        //     </div>
+        //     <div>
+        //         <label>Program: </label>{user.program}
+        //     </div>
+        // </div>
         <div>
-            <div>
-                <label>First Name: </label> {user.fname}
-            </div>
-            <div>
-                <label>Last Name: </label>{user.lname}
-            </div>
-            <div>
-                <label>Program: </label>{user.program}
-            </div>
+            test
         </div>
     )
 }

@@ -31,9 +31,9 @@ function HomePage () {
     }
 
     const test = async (event) => {
-        const a = await fetch('/testAPI', {
-            method: 'get',
-        });
+        await fetch('/testAPI')
+        .then(res=>res.json())
+        .then(data=>console.log(data))
     }
     
     return (

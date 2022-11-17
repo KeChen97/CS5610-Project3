@@ -8,25 +8,29 @@ const myDB = require("./../db/MyDB.js");
 router.use(express.json());
 router.use(express.urlencoded({ extended: true})); 
 
-router.post('/login', async (req, res) => {
-    console.log("login data",req.body);
-    const user = req.body;
-    try{
-      const userInfo = await myDB.authenticate(user);
-      if(userInfo) {
-        req.session.user = userInfo;
-        res.json({ success: true, msg: "Successful login", user: userInfo });
-      } else {
-        if (userInfo == null) {
-          res.json({ success: false, msg: "No user exist, please sign up." });
-        } else {
-          res.json({ success: false, msg: "Invalid username or password." });
-        }
-      }     
-    }catch (e) {
-      console.log(e);
-    }
+router.get('/', (req, res) => {
+  res.sendFile(path.join('../client/public', "index.html"))
 })
+
+// router.post('/login', async (req, res) => {
+//     console.log("login data",req.body);
+//     const user = req.body;
+//     try{
+//       const userInfo = await myDB.authenticate(user);
+//       if(userInfo) {
+//         req.session.user = userInfo;
+//         res.json({ success: true, msg: "Successful login", user: userInfo });
+//       } else {
+//         if (userInfo == null) {
+//           res.json({ success: false, msg: "No user exist, please sign up." });
+//         } else {
+//           res.json({ success: false, msg: "Invalid username or password." });
+//         }
+//       }     
+//     }catch (e) {
+//       console.log(e);
+//     }
+// })
 
 router.get('/getUser', (req, res) => {
   res.json({ user : req.session.user });

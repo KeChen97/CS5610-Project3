@@ -5,8 +5,8 @@ const LocalStrategy = require('passport-local');
 const myDB = require("./../db/MyDB.js");
 const router = express.Router();
 
-router.use(express.json());
-router.use(express.urlencoded({ extended: true})); 
+// router.use(express.json());
+// router.use(express.urlencoded({ extended: true})); 
 
 // const strategy = new LocalStrategy(function verify(username, password, cb) {
 //     const user = {
@@ -39,7 +39,9 @@ router.post('/login/password', async (req, res) => {
 })
 
 router.get('/testAPI', (req, res) => {
-    res.redirect("/profile");
+    console.log("testing")
+    // res.redirect("profile");
+    res.json({ success: false, msg: "Invalid username or password123." });
 })
 
 
