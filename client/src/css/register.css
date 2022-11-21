@@ -24,6 +24,10 @@
     border: 0;
 }
 
+.registerBox:valid {
+    background-color: rgb(248, 244, 226);
+}
+
 .registerBtn {
     width: 400px;
     height: 40px;

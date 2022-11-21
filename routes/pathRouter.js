@@ -1,6 +1,6 @@
 //Jerry
 const express = require('express');
-const db = require("./../db/MyDB.js");
+const db = require("../db/myAuthDB.js");
 
 const router = express.Router();
 

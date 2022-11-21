@@ -2,12 +2,24 @@
 import React, { useEffect, useState } from 'react';
 import API from '../API/API';
 import { useLocation, useNavigate } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 function Dashboard ( {userLogout} ) {
-    let location = useLocation();
     let navigate = useNavigate();
-    const user = location.state.user;
-    console.log("user", location.state.user);
+    let[user, setUser] = useState({});
+
+    useEffect(() => {
+        async function getUserInfo () {
+            try {
+                const res = await API.getUser();
+                console.log("User get in Profile", res);
+                setUser(res.user);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        getUserInfo();
+    },[])
 
     const toProfile = (event) => {
         navigate("/profile", {state: {user: user}});
@@ -16,13 +28,13 @@ function Dashboard ( {userLogout} ) {
 
     return (
         <div>
-            Hello, 
-            {user.fname}
-            <button onClick={userLogout}
-                    className="btn btn-primary logoutBtn">Log out
-            </button>
-            <a href='/profile' onClick={toProfile}>Profile</a>
+            Hello, {user?.fname}
+            
         </div>
     )
 }
+
+Dashboard.prototype = {
+    userLogout : PropTypes.func,
+};
 export default Dashboard;

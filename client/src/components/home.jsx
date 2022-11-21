@@ -9,6 +9,7 @@ import {
     useLocation,
     redirect,
   } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function HomePage () {
     let navigate = useNavigate();
@@ -31,20 +32,22 @@ function HomePage () {
     }
 
     const test = async (event) => {
-        await fetch('/testAPI')
-        .then(res=>res.json())
-        .then(data=>console.log(data))
+        const res = await fetch('/testAPI');
     }
     
     return (
         <div className="home">
-            <button onClick={goTologin} className="btn btn-primary toLoginBtn">Log in</button>
-            <button onClick={goToRegister} className="btn btn-primary toRegisterBtn">Sign up</button>
-            <button onClick={getCourses} className="btn btn-primary getCourse"> Get courses</button>
-            <button onClick={test} className="btn btn-primary test"> test</button>
+            <div className="greeting">
+                <h1 className='welcome'>Welcome to </h1>
+                <h2>Your Degree Planner</h2>
+            </div>
+            <button onClick={goTologin} className="toLoginBtn">Log in</button>
+            <button onClick={goToRegister} className="toRegisterBtn">Sign up</button>
+            {/* <button onClick={getCourses} className="getCourse"> Get courses</button>
+            <button onClick={test} className="test"> test</button> */}
         </div>
     )
 }
 
-
+HomePage.propTypes = {};
 export default HomePage;

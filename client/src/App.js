@@ -4,39 +4,47 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  useContext,
   useNavigate,
   Navigate
 } from "react-router-dom";
 import './css/App.css';
 import RegisterPanel from './components/RegisterPanel';
 import Login from './components/Login';
-import LoginPanel from './components/LoginPanel';
 import HomePage from './components/home';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import About from './components/About';
 import Navbar from './components/Navbar';
-
+import API from './API/API';
+import PropTypes from "prop-types";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [isLogin, setisLogin] = useState( sessionStorage.getItem("user") !== null &&  sessionStorage.getItem("user") !== "null");
 
-  const userLogout = () => {
+  const userLogout = async () => {
     sessionStorage.setItem("user", null);
-    setUser(null);
+    setisLogin(false);
+    const res = await API.logout();
   };
+
+  async function getUser (){
+    const res = await API.getUser();
+    console.log("User get in App", res.user);
+    return res.user;
+  }
 
   return (
     <div>
-        <Navbar user={user} userLogout={userLogout}/>
+        <Navbar isLogin={isLogin} userLogout={userLogout}/>
       <main>
         <BrowserRouter>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/register" element={<RegisterPanel />} />
-              <Route path="/login" element={<LoginPanel setUser={setUser}/>} />
-              <Route path="/dashboard" element={user ? <Dashboard userLogout={userLogout}/> : <HomePage />} />
-              <Route path="/profile" element={user ? <Profile /> : <LoginPanel />} />
+              <Route path="/login" element={<Login isLogin={isLogin} setisLogin={setisLogin} />} />
+              <Route path="/dashboard" element={isLogin ? <Dashboard userLogout={userLogout}/> : <HomePage />} />
+              <Route path="/profile" element={isLogin ? <Profile setisLogin={setisLogin}  /> :  <HomePage />} />
               <Route path="/about" element={<About />} />
             </Routes>
           </BrowserRouter>
@@ -45,5 +53,5 @@ function App() {
     
   );
 }
-
+App.prototype = {};
 export default App;

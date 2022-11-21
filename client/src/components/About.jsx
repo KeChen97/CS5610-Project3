@@ -1,5 +1,7 @@
+//Ke chen
 import React, { useEffect, useState } from 'react';
 import '../css/about.css';
+import PropTypes from "prop-types";
 
 function About () {
     return (
@@ -14,5 +16,5 @@ function About () {
         </div>
     )
 }
-
+About.prototype = {};
 export default About;

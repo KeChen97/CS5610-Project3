@@ -7,6 +7,7 @@ import {
     useNavigate,
     useLocation,
   } from "react-router-dom";
+  import PropTypes from "prop-types";
 
 function RegisterPage () {
     const [input, setInput] = useState({});
@@ -59,8 +60,8 @@ function RegisterPage () {
                     <div className="mb-3">
                         <label className="form-label">Program</label>
                         <select name="program" value={input.program} onChange={setupInput}
-                                className="form-select selectBox" id="program" >
-                            <option value=""></option>
+                                className="form-select selectBox" required={true} id="program" >
+                            <option value="">Please choose</option>
                             <option value="general">MS in Computer Science </option>
                             <option value="align">Align MS in Computer Science</option>
                         </select>
@@ -85,5 +86,5 @@ function RegisterPage () {
     
     )
 }
-
+RegisterPage.prototype = {};
 export default RegisterPage;

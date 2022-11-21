@@ -2,7 +2,7 @@
 const API = {
     login: async(input) => {
         try{
-            const res = await fetch('/login/password', {
+            const res = await fetch('/login', {
                 method: 'post',
                 body: JSON.stringify(input),
                 headers:{
@@ -32,6 +32,35 @@ const API = {
         }
     },
 
+    updateProfile: async(input) => {
+        try{
+            // console.log(" API input", input);
+            const res = await fetch('/updateUserInfo', {
+                method: 'post',
+                body: JSON.stringify(input),
+                headers:{
+                    'Content-Type' : 'application/json'
+                }
+            });
+            const updateRes = await res.json();
+            console.log("updateProfile API get", updateRes);
+            return updateRes;
+        } catch (e) {
+            console.log(e);
+        }
+    },
+
+    logout: async () => {
+        try{
+            const res = await fetch('/logout', {
+                method: 'get'
+            });
+            console.log("User logout");
+        } catch (e) {
+            console.log(e);
+        }
+    },
+
     getUser: async () => {
         try{
             const res = await fetch('/getUser', {
@@ -41,7 +70,24 @@ const API = {
                 }
             });
             const userInfo = await res.json();
+            // console.log("User get in API2", userInfo);
             return userInfo;
+        } catch (e) {
+            console.log(e);
+        }
+    },
+
+    deleteUser: async () => {
+        try {
+            const res = await fetch('/deleteUser', {
+                method: 'get',
+                headers:{
+                    'Content-Type' : 'application/json'
+                }
+            })
+            const deleteRes = await res.json();
+            console.log("Res get in API", deleteRes);
+            return deleteRes;
         } catch (e) {
             console.log(e);
         }
@@ -56,7 +102,8 @@ const API = {
                 }
             });
             const data = await res.json();
-            console.log(data);
+            // console.log(data);
+            return data;
         } catch (e) {
             console.log(e);
         }

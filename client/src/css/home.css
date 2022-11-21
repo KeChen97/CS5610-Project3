@@ -1,8 +1,26 @@
 .home {
-    /* background-image: url(./images/background.png);
-    height: 100%;  */
-    /* Center and scale the image nicely */
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
+    width: 80%;
+    margin: auto;
+}
+
+.greeting {
+    margin-top: 250px;
+    margin-bottom: 50px;
+    /* margin-left:500px; */
+}
+
+.welcome {
+    /* color: rgb(255, 255, 255); */
+    font-size: 56px;
+}
+
+button {
+    border: 0;
+    background: none;
+    margin-right:30px;
+}
+
+button:hover {
+    color:rgb(127, 127, 127);
+    border-bottom: 1px solid;
 }

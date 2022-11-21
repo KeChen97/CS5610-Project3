@@ -1,0 +1,52 @@
+
+.loginPanel {
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    /* background-color: white; */
+    width: 500px;
+    height: 400px;
+}
+
+.loginTitle {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'JK Abode', sans-serif;
+    font-size: 52pt;
+}
+
+.loginForm {
+    width: 400px;
+}
+
+.inputBox {
+    margin-bottom: 40px;
+    border: 0;
+}
+
+.inputBox:valid {
+    background-color: rgb(248, 244, 226);
+}
+
+.loginBtn {
+    width: 400px;
+    height: 40px;
+    background-color: #ffe552;
+    color: white;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.loginBtn:hover{
+    background-color: #ffde20;
+}
+
+.signup-link {
+    margin-left: 20px;
+    color: rgb(54, 54, 54);
+}
+
+.signup-link:hover {
+    color:rgb(127, 127, 127);
+}
