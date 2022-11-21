@@ -1,6 +1,6 @@
-//Jerry
-const express = require('express');
-const db = require("../db/myAuthDB.js");
+// Jerry Asala
+const express = require("express");
+const db = require("../db/myDB.js");
 
 const router = express.Router();
 
@@ -16,13 +16,12 @@ router.get("/getPaths", async (req, res) => {
 	
 });
 
-
 router.get("/getPathRecs", async (req, res) => {
 	try{
 		const arrayOfPathRecs = await db.getPathRecs();
-		console.log("array of path recs is: ",arrayOfPathRecs);
+		//console.log("array of path recs is: ",arrayOfPathRecs);
 		if (arrayOfPathRecs) {
-			console.log("paths recs are: ", arrayOfPathRecs);
+			//console.log("paths recs are: ", arrayOfPathRecs);
 			res.json({pathRecs: arrayOfPathRecs});
 		}
 	} catch(e) {
@@ -30,7 +29,6 @@ router.get("/getPathRecs", async (req, res) => {
 	}
 	
 });
-
 
 router.get("/getCourseName", async (req, res) => {
 	try{
@@ -43,7 +41,6 @@ router.get("/getCourseName", async (req, res) => {
 	}
 });
 
-
 router.get("/getUserPlans", async (req, res) => {
 	try {
 		const arrOfPlans = await db.getUserPlans();
@@ -55,13 +52,21 @@ router.get("/getUserPlans", async (req, res) => {
 	}
 });
 
-
 router.post("/createPlan", async (req, res) => {
 	let userPlan = {courses: req.body};
 	if (await db.createPlan(userPlan)) {
 		res.json({success: true, msg: "Plan created successfully"});
 	} else {
 		res.json({success: false, msg: "Error creating plan"});
+	}
+});
+
+router.post("/deletePlan", async (req, res) => {
+	let indexOfPlan = req.body;
+	if (await db.deletePlan(indexOfPlan)) {
+		res.json({success: true, msg: "Plan deleted successfully"});
+	} else {
+		res.json({success: false, msg: "Error deleting plan"});
 	}
 });
 
