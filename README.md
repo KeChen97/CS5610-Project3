@@ -47,7 +47,8 @@ Todo
 1. Register and login before use. Errors happen when inputting incorrect information, like user existed or wrong password.
 2. Create path plans in dashboard
 3. Update and delete path plans in dashboard
-4. Click "Profile" to see or update your profile, like name and password. You can also delete your account there
+4. Click "Profile" in the upper right to see or update your profile, like name and password. You can also delete your account there
+5. CLick "Logout" in the upper right to log out
 
 ## Instructions to build
 - Clone this project from GitHub Repo.
