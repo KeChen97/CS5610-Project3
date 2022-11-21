@@ -4,8 +4,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require("express-session");
-const passport = require("passport");
-
 const authRouter = require('./routes/authRouter');
 const pathRouter = require('./routes/pathRouter');
 
@@ -29,8 +27,6 @@ app.use(
     })
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(logger('dev'));
 app.use(express.json());
