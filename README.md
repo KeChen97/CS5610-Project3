@@ -2,10 +2,10 @@
 - Project Name: 
 CS Degree Planner
 
-- Project Objective: 
+## Project Objective: 
 The goal is to create a degree planner for students in the Khoury Align MSCS program. The app will allow students to select specializations they may be interested in, and see a recommendation of courses to take for the entire length of the program and in what semesters to take them. They also have the option to modify the recommended degree plan to suit their preferences.
 
-- Author:
+## Author:
 [Ke Chen](https://kechen97.github.io/)
 - User login and registration 
 - User profile edit and delete
