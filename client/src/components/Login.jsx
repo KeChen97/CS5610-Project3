@@ -1,12 +1,9 @@
 //Ke Chen
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import API from '../API/API';
-import Dashboard from './Dashboard';
 import '../css/Login.css';
 import {
-    useParams,
-    useNavigate,
-    useLocation,
+    useNavigate
   } from "react-router-dom";
 import PropTypes from "prop-types";
 

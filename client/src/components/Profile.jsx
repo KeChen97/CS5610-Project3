@@ -2,9 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import API from '../API/API';
 import {
-    useNavigate,
-    useLocation,
-    redirect,
+    useNavigate
   } from "react-router-dom";
 import Popup from './Popup';
 import '../css/Profile.css';
@@ -98,7 +96,7 @@ function Profile ({setisLogin} ) {
     return (
         <div className='row panel'>
             <div className='col-4 leftpanel'>
-                <img className='avater' src={avater} />
+                <img className='avater' alt='avater' src={avater} />
                 <h3 className="username">{user ? user.fname : "Please login"}</h3>
                 <div className="divider"></div>
                 <div className='edit'>

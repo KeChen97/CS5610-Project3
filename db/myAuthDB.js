@@ -3,7 +3,6 @@ const MongoClient = require("mongodb").MongoClient;
 const dotenv = require("dotenv");
 dotenv.config();
 
-
 function MyAuthMongoDB() {
     const myDB = {};
     const mongourl = process.env.MONGO_URL;
