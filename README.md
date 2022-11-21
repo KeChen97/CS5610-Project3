@@ -18,12 +18,10 @@ The goal is to create a degree planner for students in the Khoury Align MSCS pro
 
 ## Deployment 
 Todo
-[Click here to use!](https://dw-tracker.herokuapp.com/)
 
 
 ## Links
-Todo
-- [Link to Demo Video]() 
+- [Link to Demo Video](https://drive.google.com/file/d/1nU5b65tbLNe-OUsNxM8eaPWbYvK2xi0-/view?usp=sharing) 
 - [Link to Slides](https://docs.google.com/presentation/d/125DEhiiGFAGgeMK6UxllhF_ZTRJBRE0_m3tbAw3cngQ/edit#slide=id.g1596b0566c4_0_63)
 - [CS 5610 Web Development Class Link](https://johnguerra.co/classes/webDevelopment_fall_2022/)
 
