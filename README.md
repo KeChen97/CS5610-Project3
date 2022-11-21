@@ -1,5 +1,5 @@
 # CS5610-Project3
-- Project Name: 
+## Project Name: 
 CS Degree Planner
 
 ## Project Objective: 
@@ -30,20 +30,24 @@ Todo
 
 
 ## Screenshots
-Todo
-![Dashboard](https://github.com/KeChen97/CS5610Project2/blob/main/screenshots/dashboard.png)
+![Homepage](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/HomePage.png?raw=true)
+![Signup](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/Signup.png?raw=true)
+![Login](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/Login.png?raw=true)
+![Plan](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/DegreePlan.png?raw=true)
+![Recommendation](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/Recommendations.png?raw=true)
+![Create](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/CreatePlan.png?raw=true)
+![Profile](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/ProfileEdit.png?raw=true)
+
 
 
 ## DesignDoc
-Todo
-[DesignDocument.pdf](https://github.com/KeChen97/CS5610Project2/blob/main/ChenAsala-Project2-DesignDoc.pdf)
+[Project3DesignDoc.pdf](https://github.com/KeChen97/CS5610-Project3/blob/main/Project3DesignDoc.pdf)
 
 ## Instructions to use
 1. Register and login before use. Errors happen when inputting incorrect information, like user existed or wrong password.
 2. Create path plans in dashboard
 3. Update and delete path plans in dashboard
-4. View path plans in dashboard
-5. Click "Profile" to see or update your profile, like name and password. You can also delete your account there
+4. Click "Profile" to see or update your profile, like name and password. You can also delete your account there
 
 ## Instructions to build
 - Clone this project from GitHub Repo.
