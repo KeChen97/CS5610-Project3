@@ -40,6 +40,9 @@ function HomePage () {
             <div className="greeting">
                 <h1 className='welcome'>Welcome to </h1>
                 <h2>Your Degree Planner</h2>
+                <span className="material-symbols-outlined">
+                    date_range
+                    </span>
             </div>
             <button onClick={goTologin} className="toLoginBtn">Log in</button>
             <button onClick={goToRegister} className="toRegisterBtn">Sign up</button>
