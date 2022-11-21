@@ -1,9 +1,9 @@
-// Jerry Asala
 import React from "react";
 import PopulateCourses from "./PopulateCourses";
 import CreatePlan from "./CreatePlan";
 import PropTypes from "prop-types";
 
+// Jerry Asala
 export default function CreateDegreePlan({ planCount, handlePlanState }) {
   const createPlan = () => {
     let plans = [];
@@ -18,10 +18,6 @@ export default function CreateDegreePlan({ planCount, handlePlanState }) {
       });
     });
 
-    //setUserPlan(plans)
-    console.log("this is the user plan: ", plans);
-    //setUserPlan(plans)
-
     let res;
     const newPlan = async () => {
       try {
@@ -32,7 +28,6 @@ export default function CreateDegreePlan({ planCount, handlePlanState }) {
         });
         if (res.ok) {
           res = await res.json();
-          // do something
           console.log(res.msg);
         }
       } catch (e) {
@@ -40,7 +35,7 @@ export default function CreateDegreePlan({ planCount, handlePlanState }) {
       }
     };
     newPlan();
-    handlePlanState()
+    handlePlanState();
   };
 
   return (
@@ -150,5 +145,5 @@ export default function CreateDegreePlan({ planCount, handlePlanState }) {
 
 CreateDegreePlan.prototype = {
   planCount: PropTypes.func,
-  handlePlanState: PropTypes.func
-}
+  handlePlanState: PropTypes.func,
+};

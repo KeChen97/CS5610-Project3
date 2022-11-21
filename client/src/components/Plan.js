@@ -1,16 +1,13 @@
-// Jerry Asala
 import PlanCourse from "./PlanCourse";
 import DeletePlan from "./DeletePlan";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-
-export default function Plan({ courses, index, arrOfCourses, dep }) {
-  const deletePlan = async () => {
+// Jerry Asala
+export default function Plan({ courses, index, pos, arrOfCourses, dep }) {
+  const deletePlan = async (pos) => {
     let res;
-    let indx = index;
-    let ind = { index: indx };
+    let ind = { index: pos };
 
-    console.log(ind);
     try {
       res = await fetch("/deletePlan", {
         method: "POST",
@@ -19,14 +16,12 @@ export default function Plan({ courses, index, arrOfCourses, dep }) {
       });
       if (res.ok) {
         res = await res.json();
-        // do something
-        console.log(res.msg);
       }
     } catch (e) {
       console.log(e);
     }
 
-    dep()
+    dep();
   };
 
   const indx = index + 1;
@@ -42,15 +37,14 @@ export default function Plan({ courses, index, arrOfCourses, dep }) {
             key={index}
           />
         ))}
-        <DeletePlan pos={index} deletePlan={deletePlan} />
+        <DeletePlan pos={pos} deletePlan={deletePlan} />
       </div>
     </div>
   );
 }
 
-
 Plan.prototype = {
   courses: PropTypes.array.isRequired,
   arrOfCourses: PropTypes.func.isRequired,
-  dep: PropTypes.func.isRequired
-}
+  dep: PropTypes.func.isRequired,
+};

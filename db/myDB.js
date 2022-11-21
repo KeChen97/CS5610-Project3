@@ -33,7 +33,6 @@ function MyMongoDB() {
 			const paths = await data.find().toArray();
 			client.close();
 			if (paths) {
-				// console.log("found paths: ", paths);
 				return paths;
 			} else {
 				return "no paths found";
@@ -54,14 +53,11 @@ function MyMongoDB() {
 			client.close();
 			const pathsArray = [];
 			if (paths) {
-				//console.log("this is the path: ", paths);
 				paths.forEach((path) => {
 					pathsArray.push(path.recommendation);
 					/* [{courses:[{name:5001}, {name:5002}, ...]},
                         {courses:[{name:5001}, {name:5002}, ...]}] */
 				});
-				//const recs = path.recommendation.toArray();
-				//console.log("this is the rec: ", pathsArray);
 				return pathsArray;
 				/* {semesterI: {c1: "cs5001, c2: "cs5002},
                    {semesterII: {c1: "cs5001, c2: "cs5002}*/
@@ -72,15 +68,14 @@ function MyMongoDB() {
 	};
 
 
-	myDB.getUserPlans = async function() {
+	myDB.getUserPlans = async function(useremail) {
 		const DB_NAME = "project3";
 		const DB_COLLECTION = "users";
 		const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
 
 		try{
 			const data = client.db(DB_NAME).collection(DB_COLLECTION);
-			// TODO: sshould find one user
-			const user = await data.findOne({email: "kechen@wustl.edu"});
+			const user = await data.findOne({email: useremail});
 			console.log(user);
 			client.close();
 			
@@ -94,19 +89,15 @@ function MyMongoDB() {
 	
 
 
-	myDB.createPlan = async function(plan) {
+	myDB.createPlan = async function(plan, useremail) {
 		const DB_NAME = "project3";
 		const DB_COLLECTION = "users";
 		const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
 		let count = 0;
 
-		// a user's plan should be an arry of objects where each object is a plan
-		// create plan: selects for each sem, then collect values and save to user's plan
-	
 		try {
 			plan.courses.forEach((plan) => {
 				if (plan.code === "none") {
-					// console.log(plan.code);
 					count = count + 1; 
 				}
 			});
@@ -114,7 +105,7 @@ function MyMongoDB() {
 				return false;
 			}
 			const userCol = client.db(DB_NAME).collection(DB_COLLECTION);
-			await userCol.updateOne({email: "kechen@wustl.edu"}, {$push: {plan: plan}});
+			await userCol.updateOne({email: useremail}, {$push: {plan: plan}});
 			return true;
 		} catch(e) {
 			console.log(e);
@@ -122,17 +113,14 @@ function MyMongoDB() {
 		}
 	};
 
-	myDB.deletePlan = async function(index) {
+	myDB.deletePlan = async function(index, useremail) {
 		const DB_NAME = "project3";
 		const DB_COLLECTION = "users";
 		const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
 
-		// a user's plan should be an arry of objects where each object is a plan
-		// create plan: selects for each sem, then collect values and save to user's plan
-	
 		try {
 			const userCol = client.db(DB_NAME).collection(DB_COLLECTION);
-			await userCol.updateOne({email: "kechen@wustl.edu"}, {$pull: {plan: {courses: {pos: index.index}}}});
+			await userCol.updateOne({email: useremail}, {$pull: {plan: {courses: {pos: index.index}}}});
 			return true;
 		} catch(e) {
 			console.log(e);

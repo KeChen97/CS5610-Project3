@@ -1,14 +1,9 @@
-// Jerry Asala
 import React from "react";
 import PathItem from "./PathItem";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-
+// Jerry Asala
 export default function Path({ name, courses, courseNames }) {
-
-    
-
-
   return (
     <>
       <div className="col">
@@ -23,9 +18,8 @@ export default function Path({ name, courses, courseNames }) {
   );
 }
 
-
 Path.prototype = {
   name: PropTypes.string.isRequired,
   courses: PropTypes.func,
-  courseNames: PropTypes.func
-}
+  courseNames: PropTypes.func,
+};

@@ -1,10 +1,13 @@
-// Jerry Asala
 import React from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
+// Jerry Asala
 export default function CreatePlan({ onClick }) {
   return (
-    <button className="btn btn-success bg-success bg-gradient" onClick={onClick}>
+    <button
+      className="btn btn-success bg-success bg-gradient"
+      onClick={() => onClick()}
+    >
       Create Plan
     </button>
   );
@@ -12,4 +15,4 @@ export default function CreatePlan({ onClick }) {
 
 CreatePlan.prototype = {
   onClick: PropTypes.func,
-}
+};

@@ -1,17 +1,16 @@
-// Jerry Asala
 import React, { useEffect, useState } from "react";
 import Plan from "./Plan";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-
+// Jerry Asala
 export default function Plans({ numOfPlans, dep }) {
   const [arrOfCourses, setArrOfCourses] = useState([]);
   const [plans, setPlans] = useState([]);
-  const [changePlans, setChangePlans] = useState([0])
+  const [changePlans, setChangePlans] = useState([0]);
 
   function chngPlans() {
-    const newPlans = [changePlans[0]+1]
-    setChangePlans(newPlans)
+    const newPlans = [changePlans[0] + 1];
+    setChangePlans(newPlans);
   }
 
   useEffect(() => {
@@ -25,12 +24,10 @@ export default function Plans({ numOfPlans, dep }) {
     getPlans();
   }, [dep, changePlans]);
 
-  console.log("i just rendered");
   useEffect(() => {
     numOfPlans(plans.length);
     console.log("initially, plan length is: ", plans.length);
-    //console.log("initially, arrOfCourse length is: ", arrOfCourses.length);
-  }, [plans.length, numOfPlans])
+  }, [plans.length, numOfPlans]);
 
   useEffect(() => {
     const getArrOfCourseName = async () => {
@@ -39,7 +36,6 @@ export default function Plans({ numOfPlans, dep }) {
         res = await fetch("/getCourseName");
         const data = await res.json();
         if (data) {
-          //console.log(data.courses);
           setArrOfCourses(data.courses);
         }
       } catch (e) {
@@ -53,19 +49,18 @@ export default function Plans({ numOfPlans, dep }) {
     let courseName;
     arrOfCourses.forEach((course) => {
       if (course.code === code) {
-        //console.log("this is the course name:", course.name);
         courseName = course.name;
       }
     });
     return courseName;
   }
 
-  if(plans.length === 0) {
+  if (plans.length === 0) {
     return (
       <>
         <h4>No plan(s) to show</h4>
       </>
-    )
+    );
   }
 
   return (
@@ -75,7 +70,8 @@ export default function Plans({ numOfPlans, dep }) {
           <Plan
             courses={plan.courses.slice(1)}
             key={index}
-            index={index}
+            index={plan.courses[0].pos}
+            pos={plan.courses[0].pos}
             arrOfCourses={getCourseName}
             dep={chngPlans}
           />
@@ -85,8 +81,7 @@ export default function Plans({ numOfPlans, dep }) {
   );
 }
 
-
 Plans.prototype = {
   numOfPlans: PropTypes.func.isRequired,
-  dep: PropTypes.func.isRequired
-}
+  dep: PropTypes.func.isRequired,
+};

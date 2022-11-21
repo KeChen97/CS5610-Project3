@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom/client';
+//Ke Chen
+import React, { useState } from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
-  useContext,
-  useNavigate,
-  Navigate
 } from "react-router-dom";
 import './css/App.css';
 import RegisterPanel from './components/RegisterPanel';
@@ -17,7 +14,6 @@ import Profile from './components/Profile';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import API from './API/API';
-import PropTypes from "prop-types";
 
 function App() {
   const [isLogin, setisLogin] = useState( sessionStorage.getItem("user") !== null &&  sessionStorage.getItem("user") !== "null");
@@ -25,14 +21,9 @@ function App() {
   const userLogout = async () => {
     sessionStorage.setItem("user", null);
     setisLogin(false);
-    const res = await API.logout();
+    await API.logout();
   };
 
-  async function getUser (){
-    const res = await API.getUser();
-    console.log("User get in App", res.user);
-    return res.user;
-  }
 
   return (
     <div>

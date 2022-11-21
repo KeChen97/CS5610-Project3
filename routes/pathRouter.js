@@ -43,7 +43,7 @@ router.get("/getCourseName", async (req, res) => {
 
 router.get("/getUserPlans", async (req, res) => {
 	try {
-		const arrOfPlans = await db.getUserPlans();
+		const arrOfPlans = await db.getUserPlans(req.session.user.email);
 		if (arrOfPlans) {
 			res.json({plans: arrOfPlans});
 		}
@@ -54,7 +54,7 @@ router.get("/getUserPlans", async (req, res) => {
 
 router.post("/createPlan", async (req, res) => {
 	let userPlan = {courses: req.body};
-	if (await db.createPlan(userPlan)) {
+	if (await db.createPlan(userPlan, req.session.user.email)) {
 		res.json({success: true, msg: "Plan created successfully"});
 	} else {
 		res.json({success: false, msg: "Error creating plan"});
@@ -63,7 +63,7 @@ router.post("/createPlan", async (req, res) => {
 
 router.post("/deletePlan", async (req, res) => {
 	let indexOfPlan = req.body;
-	if (await db.deletePlan(indexOfPlan)) {
+	if (await db.deletePlan(indexOfPlan, req.session.user.email)) {
 		res.json({success: true, msg: "Plan deleted successfully"});
 	} else {
 		res.json({success: false, msg: "Error deleting plan"});

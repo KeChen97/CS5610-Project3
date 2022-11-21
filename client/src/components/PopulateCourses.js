@@ -1,10 +1,9 @@
-// Jerry Asala
 import React, { useEffect, useState } from "react";
 
 
+// Jerry Asala
 export default function PopulateCourses() {
   const [courses, setCourses] = useState([]);
-  //const [userPlan, setUserPlan] = useState([])
 
   useEffect(() => {
     const getCourseNames = async () => {
@@ -31,28 +30,6 @@ export default function PopulateCourses() {
       div.appendChild(opt);
     });
   };
-
-  /*useEffect(() => {
-        let res
-        const newPlan = async() => {
-            try {
-                res = await fetch("./createPlan", {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify(userPlan)
-                });
-                    if(res.ok) {
-                    res = await res.json();
-                    // do something
-                    console.log(res.msg);
-                }
-            } catch(e) {
-                console.log(e);
-            }
-
-        }
-        newPlan()
-    }, [])*/
 
   return <>{courses.map((course) => populateOptions(course))}</>;
 }
