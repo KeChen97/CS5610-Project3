@@ -23,9 +23,8 @@ Todo
 
 ## Links
 Todo
-- [Link to Demo Video](https://drive.google.com/file/d/1Uav1RHBQpuVjtSH94wRM4K3EmtSRxMBx/view?usp=share_link) or [This Link](https://northeastern.zoom.us/rec/share/LDfTKRh_xN5STA276TKmkQVcO-ZTZ4HcPL4oIb85qgR7Zck52NoeZByvZFMwxe3W.CO_kVXyDnq7Tag5F) Password:FG+56Du+
-- [Link to Slides](https://docs.google.com/presentation/d/19c98coIN9SQa1l-rATm0-9zpmaBuN8h3D7CdhdXbWG8/edit?usp=sharing)
-- [Link to DesignDoc](https://github.com/KeChen97/CS5610Project2/blob/main/ChenAsala-Project2-DesignDoc.pdf)
+- [Link to Demo Video]() 
+- [Link to Slides](https://docs.google.com/presentation/d/125DEhiiGFAGgeMK6UxllhF_ZTRJBRE0_m3tbAw3cngQ/edit#slide=id.g1596b0566c4_0_63)
 - [CS 5610 Web Development Class Link](https://johnguerra.co/classes/webDevelopment_fall_2022/)
 
 
