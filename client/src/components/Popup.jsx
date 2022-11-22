@@ -1,6 +1,5 @@
 //Ke Chen
-import React, { useEffect, useState } from 'react';
-import API from '../API/API';
+import React from 'react';
 import '../css/Popup.css';
 import PropTypes from "prop-types";
 

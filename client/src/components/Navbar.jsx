@@ -1,11 +1,7 @@
 //Ke Chen
-import React, { useEffect, useState } from 'react';
-import API from '../API/API';
+import React from 'react';
 import {
-    useParams,
-    useNavigate,
-    useLocation,
-    Link,
+    Link
   } from "react-router-dom";
 import '../css/Navbar.css';
 import PropTypes from "prop-types";
