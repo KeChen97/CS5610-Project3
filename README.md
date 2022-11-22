@@ -10,7 +10,8 @@ The goal is to create a degree planner for students in the Khoury Align MSCS pro
 [Ke Chen](https://kechen97.github.io/)
 - User login and registration 
 - User profile edit and delete
-- Home page and Nav bar
+- Home page and Nav bar display
+- Deployment
 
 [Jeremiah Asala](https://jerryasala.github.io/)
 - User add, view, update and delete path plans
