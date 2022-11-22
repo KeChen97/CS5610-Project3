@@ -7,7 +7,7 @@ const session = require("express-session");
 const authRouter = require('./routes/authRouter');
 const pathRouter = require('./routes/pathRouter');
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 const app = express();
 const cors = require('cors');
 app.use(

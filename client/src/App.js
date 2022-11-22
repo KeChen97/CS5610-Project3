@@ -27,9 +27,10 @@ function App() {
 
   return (
     <div>
-        <Navbar isLogin={isLogin} userLogout={userLogout}/>
+        
       <main>
         <BrowserRouter>
+            <Navbar isLogin={isLogin} userLogout={userLogout}/>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/register" element={<RegisterPanel />} />

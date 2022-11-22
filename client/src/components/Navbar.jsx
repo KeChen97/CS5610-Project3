@@ -5,19 +5,20 @@ import {
     useParams,
     useNavigate,
     useLocation,
+    Link,
   } from "react-router-dom";
 import '../css/Navbar.css';
 import PropTypes from "prop-types";
 
 function Navbar ( { isLogin, userLogout} ) {
     const accountIcon =
-        <a href='/profile' to='/profile' className="nav-link" >
+        <Link to='/profile' className="nav-link" >
             <span className="material-symbols-outlined icon">account_box</span>
-        </a>
+        </Link>
     const logoutIcon = 
-        <a href='/' to='/' onClick={userLogout} className="nav-link" >
+        <Link to='/' onClick={userLogout} className="nav-link" >
             <span className="material-symbols-outlined icon">logout</span>
-        </a>
+        </Link>
     const empty = <span></span>
    
     return (
@@ -25,16 +26,16 @@ function Navbar ( { isLogin, userLogout} ) {
             <nav id="mainNavbar" className="navbar navbar-expand-md fixed-top">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a href="/"className="brand nav-link">Degree Planner</a>
+                            <Link to="/" className="brand nav-link">Degree Planner </Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/dashboard" className="nav-link">Home</a>
+                            <Link to="/dashboard" className="nav-link">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/profile" className="nav-link">MyProfile</a>
+                            <Link to="/profile" className="nav-link">MyProfile</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/about" className="nav-link" id="about">About</a>
+                            <Link to="/about" className="nav-link" id="about">About</Link>
                         </li>
                     </ul>
                     <div className="navbar-nav icons">
