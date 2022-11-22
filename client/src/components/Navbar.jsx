@@ -4,17 +4,12 @@ import {
     Link
   } from "react-router-dom";
 import '../css/Navbar.css';
+import LogoutIcon from './LogoutIcon';
+import AccountIcon from './AccountIcon';
 import PropTypes from "prop-types";
 
 function Navbar ( { isLogin, userLogout} ) {
-    const accountIcon =
-        <Link to='/profile' className="nav-link" >
-            <span className="material-symbols-outlined icon">account_box</span>
-        </Link>
-    const logoutIcon = 
-        <Link to='/' onClick={userLogout} className="nav-link" >
-            <span className="material-symbols-outlined icon">logout</span>
-        </Link>
+  
     const empty = <span></span>
    
     return (
@@ -36,11 +31,11 @@ function Navbar ( { isLogin, userLogout} ) {
                     </ul>
                     <div className="navbar-nav icons">
                         <div className="">
-                            {isLogin ? accountIcon : empty}
+                            {isLogin ? <AccountIcon /> : empty}
                         </div>
                     
                         <div className="">
-                            {isLogin ? logoutIcon : empty}
+                            {isLogin ? <LogoutIcon userLogout={userLogout} /> : empty}
                         </div>
                     </div>
 
