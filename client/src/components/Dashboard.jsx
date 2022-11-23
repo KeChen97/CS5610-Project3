@@ -4,7 +4,7 @@ import API from "../API/API";
 import Paths from "./Paths";
 import Plans from "./Plans";
 import CreateDegreePlan from "./CreateDegreePlan";
-import '../css/dashboard.css';
+import "../css/dashboard.css";
 
 // Jerry Asala
 export default function Dashboard() {
@@ -28,7 +28,6 @@ export default function Dashboard() {
     }
     getUserInfo();
   }, []);
-
 
   if (!planState) {
     return <div>Hello, {user?.fname}</div>;
