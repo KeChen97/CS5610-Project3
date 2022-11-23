@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import API from "../API/API";
 import "../css/Login.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function LoginPanel({ isLogin, setisLogin }) {
@@ -68,9 +68,9 @@ function LoginPanel({ isLogin, setisLogin }) {
             <button className="loginBtn">Login</button>
             <div>
               Don't have an account yet?
-              <a href="/register" to="/register" className="signup-link">
+              <Link to="/register" className="signup-link">
                 Sign up
-              </a>
+              </Link>
             </div>
           </form>
         </div>
