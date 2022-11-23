@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import API from "../API/API";
 import { useNavigate } from "react-router-dom";
 import Popup from "./Popup";
+import InputProfile from "./InputProfile";
+import InputProgram from "./InputProgram";
 import "../css/Profile.css";
 import avater from "../image/blank-profile-picture-973460_1280.webp";
 import PropTypes from "prop-types";
@@ -53,24 +55,22 @@ function Profile({ setisLogin }) {
     setInput({ ...input, [name]: value });
   };
 
+  const editProfile = (e) => {
+    setEdit(true);
+  };
+
+  const updateProfileSubmit = async (event) => {
+    // console.log("update profile", input);
+    event.preventDefault();
+    const res = await API.updateProfile(input);
+    if (res.success) {
+      getUserInfo();
+    }
+    setMsg(res.msg);
+  };
+
   const updateBtn = <button className="updateBtn">Update</button>;
   const empty = "";
-  const passwordInput = (
-    <div className="mb-3">
-      <label className="form-label">Password</label>
-      <input
-        value={input.password || ""}
-        onChange={setupInput}
-        name="password"
-        required={true}
-        type="password"
-        className="eidtBox"
-        placeholder={user ? user.password : ""}
-        id="InputPassword"
-      />
-    </div>
-  );
-
   const programSelect = (
     <select
       name="program"
@@ -86,40 +86,6 @@ function Profile({ setisLogin }) {
       <option value="align">Align MS in Computer Science</option>
     </select>
   );
-
-  const alignInput = (
-    <input
-      name="program"
-      type="text"
-      className="eidtBox"
-      placeholder="Align MS in Computer Science"
-      disabled
-    />
-  );
-
-  const generalInput = (
-    <input
-      name="program"
-      type="text"
-      className="eidtBox"
-      placeholder="MS in Computer Science"
-      disabled
-    />
-  );
-
-  const editProfile = (e) => {
-    setEdit(true);
-  };
-
-  const updateProfileSubmit = async (event) => {
-    // console.log("update profile", input);
-    event.preventDefault();
-    const res = await API.updateProfile(input);
-    if (res.success) {
-      getUserInfo();
-    }
-    setMsg(res.msg);
-  };
 
   return (
     <div className="row panel">
@@ -199,17 +165,29 @@ function Profile({ setisLogin }) {
           <div className="mb-3">
             <label className="form-label">Program</label>
             <div>
-              {edit
-                ? programSelect
-                : user
-                ? user.program == "align"
-                  ? alignInput
-                  : generalInput
-                : ""}
+              {edit ? (
+                programSelect
+              ) : user ? (
+                <InputProgram program={user.program} />
+              ) : (
+                ""
+              )}
             </div>
           </div>
 
-          <div> {edit ? passwordInput : empty}</div>
+          <div>
+            {" "}
+            {edit ? (
+              <InputProfile
+                inputValue={input.password || ""}
+                setupInput={setupInput}
+                name={"password"}
+                placeHolder={""}
+              />
+            ) : (
+              empty
+            )}
+          </div>
 
           <div className="profilemsg">{profilemsg}</div>
 
