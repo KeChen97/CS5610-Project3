@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./css/App.css";
 import RegisterPanel from "./components/RegisterPanel";
 import Login from "./components/Login";
-import HomePage from "./components/home";
+import HomePage from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import About from "./components/About";
