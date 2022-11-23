@@ -1,7 +1,7 @@
 # CS5610-Project3
 ## Project Name: 
 - CS Degree Planner
-- **(We submit this project by 11/22 and want to apply for the bouns credit.)**
+- ***(We submit this project by 11/22 and want to apply for the bouns credit.)***
 
 ## Project Objective: 
 The goal is to create a degree planner for students in the Khoury Align MSCS program. The app will allow students to select specializations they may be interested in, and see a recommendation of courses to take for the entire length of the program and in what semesters to take them. They also have the option to modify the recommended degree plan to suit their preferences.
