@@ -1,4 +1,7 @@
 //Ke chen
+// Overall good organization of files with styles in its own folders and components in another.
+// One suggestion would be to further separate the main pages of your website from the components.
+// See comment in Profile.jsx
 import React from "react";
 import "../css/about.css";
 

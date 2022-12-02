@@ -1,4 +1,5 @@
 //Ke Chen
+// Great idea having the encryption logic in a seperate file.
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 

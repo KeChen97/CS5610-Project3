@@ -1,4 +1,6 @@
 //Ke Chen
+// I like that you extracted all the api logic into its own seperate file
+// Nicely organized!
 const API = {
   login: async (input) => {
     try {
