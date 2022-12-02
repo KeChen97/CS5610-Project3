@@ -1,4 +1,5 @@
 //Ke Chen
+// I think the name of the jsx file should match the function name (RegisterPage())
 import React, { useState } from "react";
 import API from "../API/API";
 import "../css/register.css";

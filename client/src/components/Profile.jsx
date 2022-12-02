@@ -1,4 +1,10 @@
 //Ke Chen
+// I think it would be good idea to separate the "pages" from "components"
+// Currently, everything resides in the components folder including the "pages" of your website.
+// Based on the navbar, the profile and dashboard would be the pages that
+// contain components such as InputProfile and InputProgram.  I would recommend creating a
+// new folder called pages that include dashboard, profile and any other pages and then import the 
+// components into the pages.  
 import React, { useEffect, useState } from "react";
 import API from "../API/API";
 import { useNavigate } from "react-router-dom";

@@ -1,4 +1,7 @@
 //Ke Chen
+// Overall, your code is well organized and the logic is easy to follow.
+// Usually I would recommend writing brief comments to explain what the code but your
+// function names and variable names were self-explanatory.  
 const MongoClient = require("mongodb").MongoClient;
 const dotenv = require("dotenv");
 dotenv.config();

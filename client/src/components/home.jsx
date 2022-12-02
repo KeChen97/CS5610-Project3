@@ -1,4 +1,6 @@
 //Ke Chen
+// I think the name of the jsx file should match the function name (HomePage())
+// The name of the jsx file should begin with a capital letter
 import React from "react";
 import "../css/home.css";
 import { useNavigate } from "react-router-dom";
