@@ -19,8 +19,9 @@ function HomePage() {
   return (
     <div className="home">
       <div className="greeting">
-        <h1 className="welcome">Welcome to </h1>
-        <h2>Your Degree Planner</h2>
+        <h2>Welcome to </h2>
+        <h1 className="welcome">Your Degree Planner</h1>
+        <span>Make plans for your CS program</span>
       </div>
       <button onClick={goTologin} className="toLoginBtn">
         Log in

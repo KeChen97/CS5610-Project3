@@ -47,7 +47,7 @@ function LoginPanel({ isLogin, setisLogin }) {
                 className="form-control inputBox"
                 placeholder="."
                 id="email"
-                aria-describedby="emailHelp"
+                aria-label="email"
               />
               <label for="email" className="form-label">
                 Email

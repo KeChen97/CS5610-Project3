@@ -1,12 +1,26 @@
 //Ke Chen
-import React from "react";
+import React, { useEffect, useState } from "react";
+import API from "../API/API";
 import { Link } from "react-router-dom";
 import "../css/Navbar.css";
 import AccountIcon from "./AccountIcon";
 import PropTypes from "prop-types";
 
 function Navbar({ isLogin }) {
-  const empty = <span></span>;
+  let [user, setUser] = useState({});
+
+  useEffect(() => {
+    async function getUserInfo() {
+      try {
+        const res = await API.getUser();
+        console.log("User get in Profile", res);
+        setUser(res.user);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getUserInfo();
+  }, []);
 
   return (
     <div>
@@ -34,7 +48,7 @@ function Navbar({ isLogin }) {
           </li>
         </ul>
         <div className="navbar-nav icons">
-          <div className="">{isLogin ? <AccountIcon /> : empty}</div>
+          <div className="">{user ? <AccountIcon /> : ""}</div>
         </div>
       </nav>
     </div>

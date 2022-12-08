@@ -81,6 +81,7 @@ function Profile({ setisLogin, isLogin, userLogout }) {
       id="program"
       required={true}
       disabled={edit ? false : true}
+      aria-label="program"
     >
       <option value="">Please choose</option>
       <option value="general">MS in Computer Science </option>
@@ -178,7 +179,9 @@ function Profile({ setisLogin, isLogin, userLogout }) {
               onChange={setupInput}
               name="fname"
               required={true}
-              placeholder={edit ? "" : user ? user.fname : ""}
+              placeholder={
+                edit ? (user ? user.fname : "") : user ? user.fname : ""
+              }
               type="text"
               className="eidtBox"
               id="fName"
@@ -189,11 +192,13 @@ function Profile({ setisLogin, isLogin, userLogout }) {
           <div className="mb-3">
             <label className="profile-label">Last Name</label>
             <input
-              value={input.lname}
+              value={input.lname || ""}
               onChange={setupInput}
               name="lname"
               required={true}
-              placeholder={edit ? "" : user ? user.lname : ""}
+              placeholder={
+                edit ? (user ? user.lname : "") : user ? user.lname : ""
+              }
               type="text"
               className="eidtBox"
               id="lName"
