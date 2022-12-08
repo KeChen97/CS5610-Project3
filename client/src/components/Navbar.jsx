@@ -2,11 +2,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/Navbar.css";
-import LogoutIcon from "./LogoutIcon";
 import AccountIcon from "./AccountIcon";
 import PropTypes from "prop-types";
 
-function Navbar({ isLogin, userLogout }) {
+function Navbar({ isLogin }) {
   const empty = <span></span>;
 
   return (
@@ -36,10 +35,6 @@ function Navbar({ isLogin, userLogout }) {
         </ul>
         <div className="navbar-nav icons">
           <div className="">{isLogin ? <AccountIcon /> : empty}</div>
-
-          <div className="">
-            {isLogin ? <LogoutIcon userLogout={userLogout} /> : empty}
-          </div>
         </div>
       </nav>
     </div>
@@ -48,7 +43,6 @@ function Navbar({ isLogin, userLogout }) {
 
 Navbar.prototype = {
   isLogin: PropTypes.bool,
-  userLogout: PropTypes.func,
 };
 
 export default Navbar;

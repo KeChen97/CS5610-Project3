@@ -1,0 +1,20 @@
+/*Ke Chen*/
+.tabIcon {
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
+.tab {
+  margin-bottom: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.tab:hover {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+#tab-logout {
+  margin-top: 500px;
+}

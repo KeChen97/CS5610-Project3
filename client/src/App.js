@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./css/App.css";
-import RegisterPanel from "./components/RegisterPanel";
-import Login from "./components/Login";
-import HomePage from "./components/Home";
-import Dashboard from "./components/Dashboard";
-import Profile from "./components/Profile";
-import About from "./components/About";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPanel from "./pages/LoginPanel";
+import HomePage from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
+import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import API from "./API/API";
 
@@ -27,24 +27,36 @@ function App() {
     <div>
       <main>
         <BrowserRouter>
-          <Navbar isLogin={isLogin} userLogout={userLogout} />
+          <Navbar isLogin={isLogin} />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/register" element={<RegisterPanel />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route
               path="/login"
-              element={<Login isLogin={isLogin} setisLogin={setisLogin} />}
+              element={<LoginPanel isLogin={isLogin} setisLogin={setisLogin} />}
             />
             <Route
               path="/dashboard"
               element={
-                isLogin ? <Dashboard userLogout={userLogout} /> : <HomePage />
+                isLogin ? (
+                  <Dashboard isLogin={isLogin} userLogout={userLogout} />
+                ) : (
+                  <HomePage />
+                )
               }
             />
             <Route
               path="/profile"
               element={
-                isLogin ? <Profile setisLogin={setisLogin} /> : <HomePage />
+                isLogin ? (
+                  <Profile
+                    setisLogin={setisLogin}
+                    isLogin={isLogin}
+                    userLogout={userLogout}
+                  />
+                ) : (
+                  <HomePage />
+                )
               }
             />
             <Route path="/about" element={<About />} />

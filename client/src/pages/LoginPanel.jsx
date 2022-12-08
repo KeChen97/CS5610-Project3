@@ -37,7 +37,7 @@ function LoginPanel({ isLogin, setisLogin }) {
         <h1 className="loginTitle">Login</h1>
         <div className="col-3">
           <form onSubmit={onFormSubmit} className="loginForm">
-            <div className="mb-3">
+            <div className="form-div">
               <input
                 name="email"
                 required={true}
@@ -45,14 +45,17 @@ function LoginPanel({ isLogin, setisLogin }) {
                 value={input.email || ""}
                 type="email"
                 className="form-control inputBox"
-                placeholder="Email"
+                placeholder="."
                 id="email"
                 aria-describedby="emailHelp"
               />
+              <label for="email" className="form-label">
+                Email
+              </label>
               <div className="loginmsg">{loginmsg}</div>
             </div>
 
-            <div className="mb-3">
+            <div className="form-div">
               <input
                 name="password"
                 required={true}
@@ -60,9 +63,12 @@ function LoginPanel({ isLogin, setisLogin }) {
                 value={input.password || ""}
                 type="password"
                 className="form-control inputBox"
-                placeholder="Password"
+                placeholder="."
                 id="InputPassword"
               />
+              <label for="password" className="form-label">
+                Password
+              </label>
             </div>
 
             <button className="loginBtn">Login</button>

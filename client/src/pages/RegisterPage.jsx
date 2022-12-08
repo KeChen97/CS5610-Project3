@@ -1,7 +1,7 @@
 //Ke Chen
 import React, { useState } from "react";
 import API from "../API/API";
-import "../css/register.css";
+import "../css/RegisterPage.css";
 import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
@@ -32,48 +32,53 @@ function RegisterPage() {
         <h1 className="registerTitle">Sign up</h1>
 
         <form onSubmit={onFormSubmit} className="registerForm">
-          <div className="mb-3">
-            <label className="form-label">Email address</label>
+          <div className="form-div">
             <input
               value={input.email || ""}
               onChange={setupInput}
               name="email"
               required={true}
               type="email"
-              className="form-control registerBox"
+              className="registerBox"
               id="email"
               aria-describedby="emailHelp"
+              placeholder=" "
+              aria-label="email"
             />
+            <label className="registerform-label">Email address</label>
           </div>
 
-          <div className="mb-3">
-            <label className="form-label">First Name</label>
+          <div className="form-div">
             <input
               value={input.fName}
               onChange={setupInput}
               name="fname"
               required={true}
               type="text"
-              className="form-control registerBox"
+              className="registerBox"
               id="fName"
+              placeholder=" "
+              aria-label="firstname"
             />
+            <label className="registerform-label">First Name</label>
           </div>
 
-          <div className="mb-3">
-            <label className="form-label">Last Name</label>
+          <div className="form-div">
             <input
               value={input.lName}
               onChange={setupInput}
               name="lname"
               required={true}
               type="text"
-              className="form-control registerBox"
+              className="registerBox"
               id="lName"
+              placeholder=" "
+              aria-label="lastname"
             />
+            <label className="registerform-label">Last Name</label>
           </div>
 
-          <div className="mb-3">
-            <label className="form-label">Program</label>
+          <div className="form-div">
             <select
               name="program"
               value={input.program}
@@ -81,24 +86,29 @@ function RegisterPage() {
               className="form-select selectBox"
               required={true}
               id="program"
+              placeholder=" "
+              aria-label="program"
             >
-              <option value="">Please choose</option>
+              <option value=""> </option>
               <option value="general">MS in Computer Science </option>
               <option value="align">Align MS in Computer Science</option>
             </select>
+            <label className="registerform-label">Program</label>
           </div>
 
-          <div className="mb-3">
-            <label className="form-label">Password</label>
+          <div className="form-div">
             <input
               value={input.password || ""}
               onChange={setupInput}
               name="password"
               required={true}
               type="password"
-              className="form-control registerBox"
+              className="registerBox"
               id="InputPassword"
+              placeholder=" "
+              aria-label="passw"
             />
+            <label className="registerform-label">Password</label>
           </div>
 
           <div className="registermsg">{registermsg}</div>

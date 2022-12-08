@@ -1,9 +1,9 @@
 // Ke Chen & Jerry Asala
 import React, { useEffect, useState } from "react";
 import API from "../API/API";
-import Paths from "./Paths";
-import Plans from "./Plans";
-import CreateDegreePlan from "./CreateDegreePlan";
+import Paths from "../components/Paths";
+import Plans from "../components/Plans";
+import CreateDegreePlan from "../components/CreateDegreePlan";
 import "../css/dashboard.css";
 
 // Jerry Asala
