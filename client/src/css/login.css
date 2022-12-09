@@ -94,7 +94,7 @@
 }
 
 .inputBox:valid {
-  background-color: rgb(248, 244, 226);
+  /* background-color: rgb(248, 244, 226); */
 }
 
 .loginBtn {

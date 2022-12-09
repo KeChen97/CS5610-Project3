@@ -41,7 +41,6 @@ function RegisterPage() {
               type="email"
               className="registerBox"
               id="email"
-              aria-describedby="emailHelp"
               placeholder=" "
               aria-label="email"
             />

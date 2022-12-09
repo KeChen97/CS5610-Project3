@@ -4,13 +4,15 @@
   vertical-align: bottom;
 }
 
-.tab {
-  margin-bottom: 40px;
+.tab,
+.navtab {
+  margin-bottom: 50px;
   text-decoration: none;
   color: black;
 }
 
-.tab:hover {
+.tab:hover,
+.navtab:hover {
   text-decoration: underline;
   color: rgba(0, 0, 0, 0.55);
 }
