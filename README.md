@@ -27,6 +27,8 @@ The goal is to create a degree planner for students in the Khoury Align MSCS pro
 - [Link to Slides](https://docs.google.com/presentation/d/125DEhiiGFAGgeMK6UxllhF_ZTRJBRE0_m3tbAw3cngQ/edit#slide=id.g1596b0566c4_0_63)
 - [CS 5610 Web Development Class Link](https://johnguerra.co/classes/webDevelopment_fall_2022/)
 
+## Color Palette
+![Palette](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj4Screenshots/palette.png?raw=true)
 
 ## Screenshots
 ![Homepage](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/HomePage.png?raw=true)
