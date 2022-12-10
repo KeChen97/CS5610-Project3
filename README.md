@@ -1,4 +1,4 @@
-# CS5610-Project3
+# CS5610-Project3 
 ## Project Name: 
 - CS Degree Planner
 - ***(We submit this project by 11/22 and want to apply for the bouns credit.)***
