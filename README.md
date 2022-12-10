@@ -30,6 +30,9 @@ The goal is to create a degree planner for students in the Khoury Align MSCS pro
 ## Color Palette
 ![Palette](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj4Screenshots/palette.png?raw=true)
 
+## Usability Studies
+
+
 ## Screenshots
 ![Homepage](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/HomePage.png?raw=true)
 ![Signup](https://github.com/KeChen97/CS5610-Project3/blob/main/Proj3Screenshots/Signup.png?raw=true)
